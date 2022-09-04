@@ -1,0 +1,15 @@
+hr{
+    width: 500px;
+}
+
+.Hint{
+    background-color: white;
+    color: blue;
+    content: wow;
+    transition: opacity 0.15s;
+}
+
+.Hint:hover{
+    
+    opacity: 0.5;
+}
