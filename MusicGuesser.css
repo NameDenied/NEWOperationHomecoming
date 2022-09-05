@@ -6,10 +6,9 @@ hr{
     background-color: white;
     color: blue;
     content: wow;
-    transition: opacity 0.15s;
+    transition: opacity 6s;
 }
 
 .Hint:hover{
-    
     opacity: 0.5;
 }

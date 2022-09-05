@@ -1,3 +1,9 @@
+@import url('http://fonts.cdnfonts.com/css/chirp-2');
+body{
+    font-family: 'Chirp', sans-serif;
+}
+
+/* Flex Stuff */
 .profile-flex-wrapper {
     justify-content: center;
     border: 2px solid black;
@@ -17,6 +23,7 @@
     border: 2px solid black;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .name-flex-wrapper {
@@ -37,13 +44,57 @@
     flex-direction: row;
 }
 
+.tabs-flex-wrapper {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.tweet-flex-wrapper {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.tweet-info-flex-wrapper{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tweet-title-flex-wrapper {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tweet-title-flex-wrapper {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tweet-utility-flex-wrapper {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Css Stuff */
 .profile-img {
     position: relative;
-    left: 20px;
-    bottom: 50px;
-    border: 4px solid white;
-    height: 79.15px;
-    width: 5vw;
+    left: 1.294vw;
+    bottom: 4.531vw;
+    border: 4px solid rgb(214, 213, 213);
+    height: 6vw;
+    width: 6vw;
     border-radius: 100%;
 }
 
@@ -51,4 +102,124 @@
     width: auto;
     height: auto;
     max-height: 200px;
+}
+
+.profile-button {
+    border-radius: 100%;
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    margin-top: 4px;
+}
+
+.follow-button {
+    border-radius: 25px;
+    border: 1px solid black;
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    margin-top: 4px;
+}
+
+.tweet-flex-wrapper>img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+
+.tweet-option {
+    height: 15px;
+    margin-right: 2px;
+}
+
+.tweet-name {
+    font-weight: bold;
+}
+
+.tweet-image {
+    margin-top: 7px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.tweet-utility {
+    height: 20px;
+    width: 20px;
+    flex-grow: 1;
+}
+
+.grey {
+    color: hsl(0, 0%, 35%);
+}
+
+.tweet-text {
+    margin: 0px;
+}
+
+.tab-button {
+    flex-grow: 1;
+    height: 30px;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    color: hsl(0, 0%, 35%);
+    position: relative;
+}
+.tab-button:hover {
+    background-color: hsl(0, 0%, 93%);
+}
+.selected-tab-button {
+    color: black;
+}
+.selected-tab-button::after {
+    background-color: turquoise;
+    position: absolute;
+    content:'';
+    width: 50%;
+    height: 3px;
+    bottom: 0;
+    left: 25%;
+    border-radius: 5px;
+}
+
+/* Flex Stuff */
+@media screen and (min-width: 1200px) {
+    .profile-flex-wrapper {
+        width: 65%;
+    }
+    .profile-img {
+        height: 6vw;
+        width: 6vw;
+    }
+}
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    .profile-flex-wrapper {
+        width: 75%;
+    }
+    .profile-img {
+        height: 7vw;
+        width: 7vw;
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 900px) {
+    .profile-flex-wrapper {
+        width: 85%;
+    }
+    .profile-img {
+        left: 2vw;
+        height: 8vw;
+        width: 8vw;
+    }
+}
+@media screen and (max-width: 500px) {
+    .profile-flex-wrapper {
+        width: 95%;
+    }
+    .profile-img {
+        left: 2vw;
+        height: 10vw;
+        width: 10vw;
+    }
 }

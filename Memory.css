@@ -1,0 +1,23 @@
+.startButton{
+    background-color: white;
+    border-color: rgb(19,255,29);
+    color: rgb(19,160,29);
+    border-width: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    width: 7%;
+    
+
+
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.startButton:hover{
+    background-color: rgb(19,160,29);
+    color: white;
+}
