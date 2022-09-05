@@ -1,72 +1,85 @@
 @import url('http://fonts.cdnfonts.com/css/chirp-2');
+
 body{
     font-family: 'Chirp', sans-serif;
+}
+
+p {
+    margin: 0px;
 }
 
 /* Flex Stuff */
 .profile-flex-wrapper {
     justify-content: center;
-    border: 2px solid black;
     display: flex;
     width: 50%;
     margin: auto;
     flex-direction: column;
+    border: 1px solid hsl(0, 0%, 93%);
 }
 
 .profile-detail-flex-wrapper {
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
 }
 
 .top-row-flex-wrapper {
-    border: 2px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
+.profile-button-flex-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 6px;
+}
+
 .name-flex-wrapper {
-    border: 2px solid black;
     display: flex;
     flex-direction: row;
 }
 
 .loc-date-flex-wrapper {
-    border: 2px solid black;
     display: flex;
     flex-direction: row;
 }
 
 .followers-flex-wrapper {
-    border: 2px solid black;
     display: flex;
     flex-direction: row;
 }
 
 .tabs-flex-wrapper {
-    border: 2px solid black;
     display: flex;
     flex-direction: row;
+    border-bottom: 1px solid hsl(0, 0%, 93%);
 }
 
 .tweet-flex-wrapper {
-    border: 2px solid black;
+    margin-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 5px;
+    gap: 10px;
+    border-bottom: 1px solid hsl(0, 0%, 93%);
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .tweet-info-flex-wrapper{
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
 .tweet-title-flex-wrapper {
-    border: 2px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -74,7 +87,6 @@ body{
 }
 
 .tweet-title-flex-wrapper {
-    border: 2px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -82,17 +94,28 @@ body{
 }
 
 .tweet-utility-flex-wrapper {
-    border: 2px solid black;
     display: flex;
     flex-direction: row;
+    margin-top: 7px;
+}
+
+.retweet-flex-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: rgb(101, 119, 134);
+    flex-grow: 1;
 }
 
 /* Css Stuff */
 .profile-img {
     position: relative;
-    left: 1.294vw;
-    bottom: 4.531vw;
-    border: 4px solid rgb(214, 213, 213);
+    /*left: 1.294vw;
+    bottom: 4.531vw;*/
+    left: 10px;
+    bottom: 50px;
+    border: 4px solid white;
     height: 6vw;
     width: 6vw;
     border-radius: 100%;
@@ -106,23 +129,14 @@ body{
 
 .profile-button {
     border-radius: 100%;
-    border: 1px solid black;
+    border: 1px solid hsl(0, 0%, 83%);
     width: 30px;
     height: 30px;
     background-color: white;
     margin-top: 4px;
 }
 
-.follow-button {
-    border-radius: 25px;
-    border: 1px solid black;
-    width: 100px;
-    height: 30px;
-    background-color: white;
-    margin-top: 4px;
-}
-
-.tweet-flex-wrapper>img {
+.tweet-profile-img {
     height: 100px;
     width: 100px;
     border-radius: 100%;
@@ -138,34 +152,57 @@ body{
 }
 
 .tweet-image {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.tweet-image-wrapper {
     margin-top: 7px;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
+    max-width: 100%;
+    max-height: 400px;
+    display: flex;
+    justify-content: center;
 }
 
 .tweet-utility {
     height: 20px;
     width: 20px;
-    flex-grow: 1;
+}
+
+.tweet-util-text {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.follow-button {
+    border-radius: 25px;
+    border: 1px solid hsl(0, 0%, 83%);
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    margin-top: 4px;
 }
 
 .grey {
     color: hsl(0, 0%, 35%);
 }
 
-.tweet-text {
-    margin: 0px;
+.hidden {
+    display: none;
 }
 
 .tab-button {
     flex-grow: 1;
-    height: 30px;
     background-color: white;
     border: none;
     font-weight: bold;
     color: hsl(0, 0%, 35%);
     position: relative;
+    height: 50px;
 }
 .tab-button:hover {
     background-color: hsl(0, 0%, 93%);
@@ -174,43 +211,65 @@ body{
     color: black;
 }
 .selected-tab-button::after {
-    background-color: turquoise;
+    background-color: rgb(29, 155, 240);
     position: absolute;
     content:'';
     width: 50%;
-    height: 3px;
+    height: 4px;
     bottom: 0;
     left: 25%;
     border-radius: 5px;
 }
 
-/* Flex Stuff */
+.span-break::after {
+    content: '';
+}
+
+/* Media Query Stuff */
 @media screen and (min-width: 1200px) {
     .profile-flex-wrapper {
-        width: 65%;
+        width: 70%;
     }
     .profile-img {
-        height: 6vw;
-        width: 6vw;
+        height: 90px;
+        width: 90px;
+        left: 10px;
+        bottom: 50px;
     }
 }
 @media screen and (min-width: 900px) and (max-width: 1200px) {
     .profile-flex-wrapper {
-        width: 75%;
+        width: 80%;
     }
     .profile-img {
-        height: 7vw;
-        width: 7vw;
+        height: 85px;
+        width: 85px;
+        left: 10px;
+        bottom: 50px;
+    }
+    .tweet-profile-img {
+        height: 80px;
+        width: 80px;
     }
 }
 @media screen and (min-width: 500px) and (max-width: 900px) {
     .profile-flex-wrapper {
-        width: 85%;
+        width: 92%;
     }
     .profile-img {
-        left: 2vw;
-        height: 8vw;
-        width: 8vw;
+        height: 80px;
+        width: 80px;
+        left: 10px;
+        bottom: 50px;
+    }
+    .tweet-profile-img {
+        height: 60px;
+        width: 60px;
+    }
+}
+@media screen and (max-width: 515px) {
+    .span-break::after {
+        content: ' ';
     }
 }
 @media screen and (max-width: 500px) {
@@ -218,8 +277,13 @@ body{
         width: 95%;
     }
     .profile-img {
-        left: 2vw;
-        height: 10vw;
-        width: 10vw;
+        height: 80px;
+        width: 80px;
+        left: 10px;
+        bottom: 50px;
+    }
+    .tweet-profile-img {
+        height: 60px;
+        width: 60px;
     }
 }

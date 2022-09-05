@@ -11,13 +11,32 @@ function buttonPressed(element, displayId) {
 
 function displayContent(displayId) {
     document.querySelectorAll('div.tweets').forEach(tabElement => {
-        console.log(displayId);
-        console.log(tabElement.id);
         if (tabElement.id === displayId) {
-            console.log('true')
             tabElement.style.display = "block";
         } else {
             tabElement.style.display = "none";
         }
     })
+}
+
+function makePostVisible(element, password, isCaseSensitive = false) {
+    if(isCaseSensitive == true){
+        if (element.previousElementSibling.value === password) {
+            const parent = element.parentElement
+            parent.classList.add('hidden');
+            const post = parent.nextElementSibling;
+            post.classList.remove('hidden');
+        } else {
+            document.getElementById('incorrectPassword').innerText = "Incorrect password, make sure it's case sensitive.";
+        }
+    } else {
+        if (element.previousElementSibling.value.toLowerCase() === password.toLowerCase()) {
+            const parent = element.parentElement
+            parent.classList.add('hidden');
+            const post = parent.nextElementSibling;
+            post.classList.remove('hidden');
+        } else {
+            document.getElementById('incorrectPassword').innerText = "Incorrect password";
+        }
+    }
 }
