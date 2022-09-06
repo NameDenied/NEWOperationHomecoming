@@ -1,7 +1,7 @@
 function buttonPressed(element, displayId) {
     document.querySelector('div.tabs-flex-wrapper').querySelectorAll('.tab-button').forEach(tabElement => {
         if (tabElement === element) {
-            tabElement.classList.add("selected-tab-button")
+            tabElement.classList.add("selected-tab-button");
         } else {
             tabElement.classList.remove('selected-tab-button');
         }
@@ -20,14 +20,16 @@ function displayContent(displayId) {
 }
 
 function makePostVisible(element, password, isCaseSensitive = false) {
-    if(isCaseSensitive == true){
+    if (isCaseSensitive === true){
         if (element.previousElementSibling.value === password) {
             const parent = element.parentElement
             parent.classList.add('hidden');
             const post = parent.nextElementSibling;
             post.classList.remove('hidden');
+            console.log('password correct');
         } else {
-            document.getElementById('incorrectPassword').innerText = "Incorrect password, make sure it's case sensitive.";
+            console.log('password incorrect');
+            element.nextElementSibling.innerText = "Incorrect password, make sure it's case sensitive.";
         }
     } else {
         if (element.previousElementSibling.value.toLowerCase() === password.toLowerCase()) {
@@ -35,8 +37,10 @@ function makePostVisible(element, password, isCaseSensitive = false) {
             parent.classList.add('hidden');
             const post = parent.nextElementSibling;
             post.classList.remove('hidden');
+            console.log('password correct');
         } else {
-            document.getElementById('incorrectPassword').innerText = "Incorrect password";
+            console.log('password incorrect');
+            element.nextElementSibling.innerText = "Incorrect password";
         }
     }
 }

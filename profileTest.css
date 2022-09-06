@@ -86,13 +86,6 @@ p {
     align-items: center;
 }
 
-.tweet-title-flex-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .tweet-utility-flex-wrapper {
     display: flex;
     flex-direction: row;

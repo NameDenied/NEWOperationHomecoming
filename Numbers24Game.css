@@ -1,0 +1,65 @@
+body {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    margin: auto;
+    width: 200px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    aspect-ratio: 1;
+}
+
+.grid-item {
+    background-color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.grid-item:hover {
+    background-color: hsl(0, 0%, 93%);
+}
+
+.column-two {
+    grid-column: span 2;
+}
+
+.column-four {
+    grid-column: span 4;
+}
+
+.row-two {
+    grid-row: span 2;
+}
+
+.rectangle {
+    aspect-ratio: 2 / 1;
+}
+
+.green {
+    color: hsl(136, 54%, 43%);
+    border: 2px solid hsl(136, 54%, 43%);
+}
+
+.red {
+    color: hsl(0, 100%, 50%);
+    border: 2px solid hsl(0, 100%, 50%);
+}
+
+.grey {
+    color: hsl(0, 0%, 50%);
+    border: 2px solid hsl(0, 0%, 50%);
+}
+
+.black {
+    color: hsl(0, 0%, 0%);
+    border: 2px solid hsl(0, 0%, 0%);
+}
+
+.hidden {
+    display: none;
+}
+
+.font-size-10 {
+    font-size: 10px;
+}
