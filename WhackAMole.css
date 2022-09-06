@@ -1,0 +1,29 @@
+.grid-container {
+    display: grid;
+    margin: auto;
+    width: 600px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    aspect-ratio: 1;
+}
+
+.grid-item {
+    background-color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.grid-item:hover {
+    background-color: hsl(0, 0%, 93%);
+}
+
+.column-two {
+    grid-column: span 2;
+}
+
+.column-four {
+    grid-column: span 4;
+}
+
+.row-two {
+    grid-row: span 2;
+}
