@@ -13,16 +13,31 @@ async function runGame(){
     while (gameRunning == true){
         await new Promise(resolve => setTimeout(resolve, (Math.floor(Math.random() * 3)+1)/10*1000));
         let index = Math.floor(Math.random() * 25)
-        listOfNumber[index][1] = listOfNumber[index][1] + Math.floor(Math.random()*2)+1
+        let add = Math.floor(Math.random()*2)+1;
+        if (add == 2){
+            if(listOfNumber[index][1] + add == 10){
+                add = 1;
+            }
+        }
+
+        listOfNumber[index][1] = listOfNumber[index][1] + add;
         let ElementId = listOfNumber[index][0];
 
         document.getElementById(ElementId).innerText = listOfNumber[index][1]
+        let r = 0+listOfNumber[index][1] * 25
+        let g = 250-listOfNumber[index][1] * 25
+        document.getElementById(ElementId).style.backgroundColor = "rgb("+r+","+g+",0)"
+        if(listOfNumber[index][1] >= 10){
+            gameRunning = false;
+            alert("You lose 🥺")
+            alert("Refresh to try again!")
+        }
     }
     
 }
 
 async function CountDown(){
-    let TimeLeft = 35
+    let TimeLeft = 25
     document.getElementById("TLabel").innerText = "Time Left: " + TimeLeft;
     while(TimeLeft > 0){
         
@@ -30,7 +45,12 @@ async function CountDown(){
         TimeLeft = TimeLeft-1;
         document.getElementById("TLabel").innerText = "Time Left: " + TimeLeft;
     }
-    gameRunning = false;
+    if (gameRunning == true){
+        alert("Congrats! You win!")
+        alert('The passcode is: "Peanutbutter"')
+    }
+        gameRunning = false;
+    
 }
 
 
@@ -40,4 +60,7 @@ function select(ElemId){
     }
     
     document.getElementById("B"+(ElemId)).innerText = listOfNumber[ElemId-1][1];
+    let r = 0+listOfNumber[ElemId-1][1] * 25
+    let g = 250-listOfNumber[ElemId-1][1] * 25
+    document.getElementById("B"+(ElemId)).style.backgroundColor = "rgb("+r+","+g+",0)"
 }

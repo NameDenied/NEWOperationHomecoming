@@ -27,6 +27,13 @@ function initialize(){
         }
     }
 
+    //Create keyboard
+    let keyboard = [
+        ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+        ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+        ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+    ]
+
     // Listen for Key Press
     document.addEventListener("keyup", (e) => {
         if (gameOver){

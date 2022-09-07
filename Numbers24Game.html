@@ -15,7 +15,7 @@
     <h1>24 Game</h1>
     <p style="font-size: 16px;">Try to add, subtract, multiply, and divide the four numbers in order to get 24. Numbers may only be used once, have fun :D</p>
     <hr>
-    <h3 style = "font-size: 24px; font-weight: bold;">1 2 3 3</h3>
+    <!-- <h3 style = "font-size: 24px; font-weight: bold;">1 2 3 3</h3>
     <select name="num1" id="num1">
         <option value="-1"></option>
         <option value="1">1</option>
@@ -62,12 +62,12 @@
         <option value="2">2</option>
         <option value="3">3</option>
     </select>
-    <p>NO PEMDAS!!!</p>
+    <p>NO PEMDAS!!!</p> -->
     <div class="grid-container">
-        <button class="grid-item column-two row-two green" onclick="select(1)">1</button>
-        <button class="grid-item column-two row-two green" onclick="select(2)">2</button>
-        <button class="grid-item column-two row-two green" onclick="select(3)">3</button>
-        <button class="grid-item column-two row-two green" onclick="select(4)">4</button>
+        <button class="grid-item column-two row-two green" onclick="select('number', this)">1</button>
+        <button class="grid-item column-two row-two green" onclick="select('number', this)">2</button>
+        <button class="grid-item column-two row-two green" onclick="select('number', this)">3</button>
+        <button class="grid-item column-two row-two green" onclick="select('number', this)">4</button>
 
         <button class="grid-item grey"  onclick="select('+')">+</button>
         <button class="grid-item grey" onclick="select('-')">-</button>
@@ -76,15 +76,9 @@
 
         <button class="grid-item column-four red" onclick="reset()">Reset</button>
 
-        <div class="grid-item column-four black hidden" id="equation">
-            <span id="firstDigit"></span>
-            <span id="firstOperator"></span>
-            <span id="secondDigit"></span>
-            <span id="secondOperator"></span>
-            <span id="thirdDigit"></span>
-            <span id="thirdOperator"></span>
-            <span id="fourthDigit"></span>
-            <span id="fourthOperator"></span>
+        <div class="grid-item column-four black hidden" id="equationDiv">
+            <span id="equation"></span>
+            <span id="equal"></span>
         </div>
 
         <div class="grid-item column-four red hidden font-size-10" id="error"></div>

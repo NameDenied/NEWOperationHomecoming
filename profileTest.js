@@ -1,3 +1,5 @@
+let totalFound = 0
+
 function buttonPressed(element, displayId) {
     document.querySelector('div.tabs-flex-wrapper').querySelectorAll('.tab-button').forEach(tabElement => {
         if (tabElement === element) {
@@ -27,6 +29,8 @@ function makePostVisible(element, password, isCaseSensitive = false) {
             const post = parent.nextElementSibling;
             post.classList.remove('hidden');
             console.log('password correct');
+            totalFound = totalFound + 1;
+            // alert(totalFound)
         } else {
             console.log('password incorrect');
             element.nextElementSibling.innerText = "Incorrect password, make sure it's case sensitive.";
@@ -38,9 +42,16 @@ function makePostVisible(element, password, isCaseSensitive = false) {
             const post = parent.nextElementSibling;
             post.classList.remove('hidden');
             console.log('password correct');
+            totalFound = totalFound + 1;
+            // alert(totalFound)
         } else {
             console.log('password incorrect');
             element.nextElementSibling.innerText = "Incorrect password";
         }
+    }
+    console.log(totalFound);
+    if(totalFound >= 3){
+        document.getElementById("WRD").style.visibility = "visible"
+        // alert(totalFound)
     }
 }
